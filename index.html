@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RASSIO INK — Piscinas, losas, pintura, aberturas y mobiliario</title>
+<meta name="description" content="Renovación de piscinas, losas y terrazas, pintura, aberturas y mobiliario. Presupuesto sin cargo por WhatsApp.">
+<meta property="og:title" content="RASSIO INK">
+<meta property="og:description" content="Piscinas · Losas y Terrazas · Pintura · Aberturas · Mobiliario. Presupuesto sin cargo.">
+<meta property="og:image" content="img/pileta-despues-agua.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--verde:#1E2A1D;--crema:#ECE6D6;--fondo:#F1EEE6;--tinta:#1A1F19;--gris:#4A4F45;--suave:#C9C3B2;--acento:#9CC3D9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6}
+a{color:var(--verde)}
+button,input,textarea{font:inherit}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.wrap{max-width:1400px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px)}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.h2{margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(56px,7vw,104px);line-height:.9;text-transform:uppercase;letter-spacing:-1px}
+.pill{border-radius:999px}
+.btn-claro{background:var(--crema);color:var(--verde);text-decoration:none;padding:14px 24px;min-height:52px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.btn-linea{border:1px solid rgba(236,230,214,.6);color:var(--crema);text-decoration:none;padding:14px 24px;min-height:52px;border-radius:999px;display:inline-flex;align-items:center;font-weight:500;font-size:15px}
+.hero{background:#141A14;padding:clamp(10px,1.5vw,20px)}
+.hero-card{max-width:1400px;margin:0 auto;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));min-height:min(760px,calc(100vh - 40px))}
+.hero-izq{background:var(--verde);color:var(--crema);padding:28px clamp(20px,5vw,40px) 36px;display:flex;flex-direction:column;gap:28px}
+.hero-izq nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px 22px;border-bottom:1px solid rgba(236,230,214,.3);padding-bottom:14px}
+.hero-izq nav a{color:var(--crema);text-decoration:none;padding:12px 0}
+.hero h1{margin:auto 0 0;font-size:clamp(88px,11vw,176px);line-height:.82;letter-spacing:-2px;text-transform:uppercase}
+.slides{position:relative;flex:1;min-height:360px;overflow:hidden;background:var(--verde)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1);transition:opacity 1.6s ease,transform 0s linear 1.6s}
+.slides img.on{opacity:1;transform:scale(1.08);transition:opacity 1.6s ease,transform 7s ease-out}
+.puntos{position:absolute;left:16px;right:16px;bottom:14px;display:flex;gap:6px}
+.puntos span{height:3px;flex:1;border-radius:2px;background:rgba(236,230,214,.3);transition:background .6s}
+.puntos span.on{background:var(--crema)}
+.hero-pie{background:var(--fondo);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--tinta)}
+.hero-pie>*{padding:12px 18px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.hero-pie>*:not(:last-child){border-right:1px solid var(--tinta)}
+.hero-pie button{background:none;border:none;text-align:right;cursor:pointer;color:var(--tinta);min-height:44px}
+.servicios{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:40px 32px}
+.servicios article{display:flex;flex-direction:column;gap:12px}
+.link-btn{align-self:flex-start;min-height:44px;background:none;border:none;padding:0;color:inherit;text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-size:14px}
+.trabajos{background:var(--verde);color:var(--crema)}
+.chip{min-height:44px;padding:10px 18px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;background:transparent;color:var(--crema);border:1px solid rgba(236,230,214,.45)}
+.chip.on{background:var(--crema);color:var(--tinta);border-color:var(--crema)}
+.flecha{width:48px;height:48px;border-radius:999px;border:1px solid rgba(236,230,214,.45);background:transparent;color:var(--crema);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.track{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.card{margin:0;flex:0 0 max(280px,calc((100% - 64px)/3));scroll-snap-align:start;display:flex;flex-direction:column;gap:14px}
+.par{border-radius:16px;overflow:hidden;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--verde)}
+.par button{border:none;padding:0;margin:0;width:100%;display:block;cursor:zoom-in;position:relative;aspect-ratio:3/4;background:#3A4637}
+.par img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;left:10px;top:10px;padding:4px 10px;border-radius:999px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.tag.a{background:rgba(20,26,20,.8);color:var(--crema)}
+.tag.d{background:var(--crema);color:var(--tinta)}
+.vistas{display:flex;gap:8px}
+.vistas button{flex:1;min-height:44px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:500;background:transparent;color:var(--crema);border:1px solid rgba(236,230,214,.45)}
+.vistas button.on{background:var(--crema);color:var(--tinta);border-color:var(--crema)}
+.card figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;border-top:1px solid rgba(236,230,214,.3);padding-top:12px}
+.rubro{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--acento);border-radius:999px;padding:4px 12px}
+.sobre{border-radius:24px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));background:#E3DFD3}
+.sobre img{width:100%;min-height:440px;height:100%;object-fit:cover;object-position:center 45%;display:block}
+.campo{display:flex;flex-direction:column;gap:4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gris);border-bottom:1px solid var(--tinta);padding:14px 0}
+.campo input,.campo textarea{min-height:44px;border:none;background:transparent;font-size:18px;color:var(--tinta);padding:0;outline-offset:4px}
+.fab{position:fixed;right:24px;bottom:24px;z-index:40;display:flex;align-items:center;gap:14px;text-decoration:none}
+.fab .globo{position:relative;background:#fff;color:var(--tinta);padding:10px 16px;border-radius:14px;font-size:15px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.18);white-space:nowrap}
+.fab .globo::after{content:"";position:absolute;right:-5px;top:50%;width:12px;height:12px;background:#fff;transform:translateY(-50%) rotate(45deg)}
+.fab .circ{flex:none;width:62px;height:62px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(12,16,12,.75);overflow-y:auto;display:none}
+.modal.on{display:block}
+.modal .cerrar{position:fixed;top:12px;right:12px;z-index:51;width:48px;height:48px;border-radius:999px;border:none;background:var(--crema);color:var(--tinta);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.post{max-width:1240px;margin:0 auto;min-height:100%;background:var(--fondo);display:flex;flex-wrap:wrap}
+.post-media{flex:1 1 600px;min-width:0;background:var(--verde);padding:16px;display:flex;flex-direction:column;gap:12px}
+.visor{position:relative;width:100%;height:min(78vh,760px);min-height:360px;border-radius:14px;overflow:hidden;background:#141A14}
+.visor img,.visor video{width:100%;height:100%;object-fit:contain;display:block;background:#000}
+.visor .nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:999px;border:none;background:rgba(236,230,214,.92);color:var(--tinta);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.thumbs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.thumbs button{position:relative;flex:none;width:64px;height:64px;padding:0;border-radius:8px;overflow:hidden;cursor:pointer;background:none;border:2px solid transparent;opacity:.5}
+.thumbs button.on{border-color:var(--crema);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.post-info{flex:1 1 380px;min-width:0;padding:40px clamp(20px,4vw,44px) 48px;display:flex;flex-direction:column;gap:22px}
+.post-info dt{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5A5F54}
+.post-info dd{margin:0;font-weight:600}
+@media (max-width:640px){
+  .fab{right:16px;bottom:16px}
+  .fab .globo{font-size:13px;padding:8px 12px}
+  .fab .circ{width:56px;height:56px}
+  .hero-izq nav{justify-content:flex-start}
+  .hero-pie>*{padding:10px 12px}
+  .hero-meta{display:none!important}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-card">
+<div class="hero-izq">
+<nav aria-label="Principal" class="eyebrow"><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a><a href="#presupuesto">Contacto</a></nav>
+<h1 class="serif">Rassio<br>Ink</h1>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a class="btn-claro" href="https://wa.me/5492215550664" target="_blank" rel="noopener">Pedir presupuesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn-linea" href="#trabajos">Ver trabajos</a>
+</div>
+<div class="eyebrow hero-meta" style="display:flex;justify-content:space-between;gap:16px;color:var(--suave)"><span>Merlo, San Luis</span><span>Piscinas · Losas · Pintura · Aberturas · Mobiliario</span></div>
+<div aria-hidden="true" style="height:3px;background:rgba(236,230,214,.15)"><div style="width:38%;height:3px;background:var(--acento)"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;min-height:420px">
+<div class="slides" id="slides"><div class="puntos" id="puntos" aria-hidden="true"></div></div>
+<div class="hero-pie"><span id="heroPos"></span><span id="heroTitulo" aria-live="polite" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></span><button type="button" id="heroVer">Ver trabajo →</button></div>
+</div>
+</div>
+</section>
+
+<section id="servicios" class="wrap" style="padding-top:112px;padding-bottom:112px;display:flex;flex-direction:column;gap:56px">
+<div style="border-bottom:1px solid var(--tinta);padding-bottom:20px"><h2 class="h2">Servicios</h2></div>
+<div class="servicios" id="servicios-lista"></div>
+</section>
+
+<section id="trabajos" class="trabajos">
+<div class="wrap" style="padding-top:112px;padding-bottom:112px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;border-bottom:1px solid rgba(236,230,214,.3);padding-bottom:20px">
+<h2 class="h2">Trabajos <span style="font-style:italic;text-transform:none">antes y después</span></h2>
+<a class="eyebrow" href="https://www.instagram.com/rassioink" target="_blank" rel="noopener" style="color:var(--crema);font-size:12px;padding:12px 0">Instagram @rassioink →</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:-24px">
+<div role="group" aria-label="Filtrar trabajos por servicio" id="chips" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+<div style="display:flex;gap:10px">
+<button type="button" class="flecha" id="prev" aria-label="Trabajo anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+<button type="button" class="flecha" id="next" aria-label="Trabajo siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
+</div>
+<div class="track" id="track"></div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:112px">
+<div class="sobre">
+<img src="img/carlos2.jpg" alt="Carlos Martin Rassio">
+<div style="padding:56px clamp(20px,5vw,48px);display:flex;flex-direction:column;gap:22px;justify-content:center">
+<span class="eyebrow" style="color:#5A5F54">Quién está detrás</span>
+<h2 class="serif" style="margin:0;font-size:clamp(48px,5vw,72px);line-height:.95">Soy <span style="font-style:italic">Carlos Martin Rassio</span></h2>
+<p style="margin:0;font-size:17px;color:var(--gris)">Mis años de experiencia garantizan un trabajo profesional: prolijidad, puntualidad y entrega en el tiempo acordado.</p>
+</div>
+</div>
+</section>
+
+<section id="presupuesto" class="wrap" style="padding-top:112px;padding-bottom:112px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h2 class="serif" style="margin:0;font-size:clamp(64px,8vw,128px);line-height:.85;text-transform:uppercase;letter-spacing:-1px">Hablemos<br><span style="font-style:italic;text-transform:none">de tu proyecto</span></h2>
+<p style="margin:0;font-size:17px;max-width:440px;color:var(--gris)">Mandame fotos por WhatsApp y te paso presupuesto.</p>
+<a href="https://wa.me/5492215550664" target="_blank" rel="noopener" style="align-self:flex-start;background:var(--verde);color:var(--crema);text-decoration:none;padding:16px 26px;min-height:52px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-weight:600">Escribir por WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<span style="font-size:14px;color:var(--gris)"><a href="tel:+5492215550664" style="color:var(--tinta)">221 555-0664</a> · <a href="mailto:rassiomartin@yahoo.com.ar" style="color:var(--tinta)">rassiomartin@yahoo.com.ar</a></span>
+</div>
+<form id="form" style="display:flex;flex-direction:column;gap:4px">
+<div role="status" id="ok" style="display:none;background:var(--verde);color:var(--crema);padding:14px 18px;border-radius:12px;margin-bottom:12px">¡Listo! Se abrió WhatsApp con tu consulta para enviarla.</div>
+<label class="campo">Nombre<input type="text" name="nombre" autocomplete="name"></label>
+<label class="campo">Teléfono / WhatsApp<input type="tel" name="telefono" autocomplete="tel"></label>
+<label class="campo">Contame el trabajo<textarea name="mensaje" rows="3" style="resize:vertical"></textarea></label>
+<button type="submit" style="margin-top:24px;align-self:flex-start;min-height:52px;padding:14px 28px;border-radius:999px;background:var(--tinta);color:var(--crema);border:none;font-weight:600;cursor:pointer">Enviar por WhatsApp</button>
+</form>
+</section>
+
+<footer style="background:var(--verde);color:var(--crema)">
+<div class="wrap" style="padding-top:48px;padding-bottom:32px;display:flex;flex-direction:column;gap:32px">
+<div class="serif" style="font-size:clamp(72px,14vw,220px);line-height:.8;text-transform:uppercase;letter-spacing:-2px">Rassio Ink</div>
+<div class="eyebrow" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--suave);border-top:1px solid rgba(236,230,214,.3);padding-top:14px;padding-bottom:70px"><span>Merlo, San Luis</span><a href="https://www.instagram.com/rassioink" target="_blank" rel="noopener" style="color:var(--crema)">Instagram @rassioink</a></div>
+</div>
+</footer>
+
+<a class="fab" href="https://wa.me/5492215550664?text=Hola!%20Quiero%20pedir%20un%20presupuesto." target="_blank" rel="noopener" aria-label="Pedir presupuesto sin cargo por WhatsApp">
+<span class="globo">Presupuesto sin cargo</span>
+<span class="circ"><svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.3 3.2 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1-.4-2.4-1.8-2.8-2.8l.9-1-1-2z" fill="#FFFFFF" stroke-width="1"/></svg></span>
+</a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitulo">
+<button type="button" class="cerrar" id="mCerrar" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<article class="post">
+<div class="post-media">
+<div class="visor" id="visor">
+<span id="mEtiqueta" class="tag d" style="left:12px;top:12px;z-index:2"></span>
+<span id="mPos" style="position:absolute;right:12px;bottom:12px;z-index:2;background:rgba(20,26,20,.8);color:var(--crema);padding:5px 12px;border-radius:999px;font-size:11px;letter-spacing:1.5px"></span>
+<button type="button" class="nav" id="mPrev" aria-label="Foto anterior" style="left:10px;z-index:2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+<button type="button" class="nav" id="mNext" aria-label="Foto siguiente" style="right:10px;z-index:2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+<div id="mMedia" style="position:absolute;inset:0"></div>
+</div>
+<div class="thumbs" id="mThumbs"></div>
+</div>
+<div class="post-info">
+<span id="mRubro" class="eyebrow" style="align-self:flex-start;border:1px solid var(--tinta);border-radius:999px;padding:5px 12px"></span>
+<h2 id="mTitulo" class="serif" style="margin:0;font-size:clamp(40px,5vw,60px);line-height:.95"></h2>
+<p id="mResumen" class="serif" style="margin:0;font-style:italic;font-size:24px;line-height:1.2;color:#3E4239"></p>
+<p id="mDesc" style="margin:0;color:var(--gris)"></p>
+<div><span class="eyebrow" style="color:#5A5F54;display:block;padding-bottom:10px">Qué se hizo</span><ul id="mTareas" style="list-style:none;margin:0;padding:0;border-bottom:1px solid var(--tinta)"></ul></div>
+<dl style="margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+<div style="grid-column:1/-1;border-top:1px solid var(--tinta);padding-top:12px"><dt>Material</dt><dd id="mMaterial" style="font-size:18px"></dd></div>
+<div><dt>Zona</dt><dd id="mZona"></dd></div>
+<div><dt>Duración</dt><dd id="mDuracion"></dd></div>
+</dl>
+</div>
+</article>
+</div>
+
+<script>
+(function(){
+    const todos = [
+      { id: 'p1', rubro: 'Piscinas', titulo: 'Renovación de piscina', vistas: [
+        { label: 'Con agua', alt: 'con agua', fotos: ['img/pileta-antes-agua.jpg', 'img/pileta-despues-agua.jpg'] },
+        { label: 'Sin agua', alt: 'sin agua', fotos: ['img/pileta-antes-seca.jpg', 'img/pileta-despues-seca.jpg'] }
+      ] },
+      { id: 'p2', rubro: 'Piscinas', titulo: 'Piscina de fibra de vidrio', vistas: [
+        { label: 'Frente', alt: 'vista de frente', fotos: ['img/fibra-antes-frente.jpg', 'img/fibra-despues-frente.jpg'] },
+        { label: 'Escalera', alt: 'vista de la escalera', fotos: ['img/fibra-antes-escalera.jpg', 'img/fibra-despues-escalera.jpg'] },
+        { label: 'Con agua', alt: 'antes con agua, después vacía', fotos: ['img/fibra-antes-agua.jpg', 'img/fibra-despues-frente.jpg'] }
+      ] },
+      { id: 'p3', rubro: 'Piscinas', titulo: 'Piscina en las sierras', vistas: [
+        { label: 'Sin agua', alt: 'sin agua', fotos: ['img/sierra-antes-seca.jpg', 'img/sierra-despues.jpg'] },
+        { label: 'Con agua', alt: 'antes con agua, después vacía', fotos: ['img/sierra-antes-agua.jpg', 'img/sierra-despues-escalera.jpg'] }
+      ] },
+      { id: 'p6', rubro: 'Losas y Terrazas', titulo: 'Impermeabilización de losa', vistas: [
+        { label: 'Antes / Después', alt: 'misma carga, antes y después', fotos: ['img/losa-antes.jpg', 'img/losa-despues-carga.jpg'] }
+      ] },
+      { id: 'p9', rubro: 'Pintura', titulo: 'Pintura interior', vistas: [
+        { label: 'Pared', alt: 'pared principal', fotos: ['img/int-antes-pared.jpg', 'img/int-despues-pared.jpg'] },
+        { label: 'Ventanal', alt: 'pared del ventanal', fotos: ['img/int-antes-ventanal.jpg', 'img/int-despues-ventanal.jpg'] }
+      ] },
+      { id: 'p4', rubro: 'Aberturas', titulo: 'Portón y puerta de hierro', vistas: [
+        { label: 'Frente', alt: 'vista de frente', fotos: ['img/porton-antes-frente.jpg', 'img/porton-despues-frente.jpg'] },
+        { label: 'Interior', alt: 'vista desde adentro', fotos: ['img/porton-antes-interior.jpg', 'img/porton-despues-interior.jpg'] },
+        { label: 'Puerta', alt: 'puerta peatonal', fotos: ['img/porton-antes-puerta.jpg', 'img/porton-despues-lateral.jpg'] }
+      ] },
+      { id: 'p5', rubro: 'Aberturas', titulo: 'Cortina metálica de local', vistas: [
+        { label: 'Frente', alt: 'vista de frente', fotos: ['img/cortina-antes-frente.jpg', 'img/cortina-despues-frente.jpg'] },
+        { label: 'Detalle', alt: 'detalle de la terminación', fotos: ['img/cortina-antes-grafiti.jpg', 'img/cortina-despues-detalle.jpg'] }
+      ] },
+      { id: 'p7', rubro: 'Mobiliario', titulo: 'Juego de jardín renovado', vistas: [
+        { label: 'Juego completo', alt: 'juego completo', fotos: ['img/mob-antes-juego.jpg', 'img/mob-despues-juego.jpg'] },
+        { label: 'Sillón', alt: 'sillón de dos cuerpos', fotos: ['img/mob-antes-sillon.jpg', 'img/mob-despues-jardin.jpg'] }
+      ] },
+      { id: 'p8', rubro: 'Mobiliario', titulo: 'Mesa y bancos de madera', vistas: [
+        { label: 'Mesa', alt: 'mesa', fotos: ['img/madera-antes-mesa.jpg', 'img/madera-despues-mesa.jpg'] },
+        { label: 'Bancos', alt: 'bancos', fotos: ['img/madera-antes-bancos.jpg', 'img/madera-despues-bancos.jpg'] }
+      ] }
+    ];
+
+    const fotosDe = {
+      p1: [
+        { label: 'Antes · con agua', src: 'img/pileta-antes-agua.jpg' },
+        { label: 'Antes · sin agua', src: 'img/pileta-antes-seca.jpg' },
+        { label: 'Después · sin agua', src: 'img/pileta-despues-seca.jpg' },
+        { label: 'Después · con agua', src: 'img/pileta-despues-agua.jpg' }
+      ],
+      p2: [
+        { label: 'Antes · con agua', src: 'img/fibra-antes-agua.jpg' },
+        { label: 'Antes · frente', src: 'img/fibra-antes-frente.jpg' },
+        { label: 'Antes · escalera', src: 'img/fibra-antes-escalera.jpg' },
+        { label: 'Después · frente', src: 'img/fibra-despues-frente.jpg' },
+        { label: 'Después · escalera', src: 'img/fibra-despues-escalera.jpg' }
+      ],
+      p3: [
+        { label: 'Antes · el lugar', src: 'img/sierra-entorno.jpg' },
+        { label: 'Antes · con agua', src: 'img/sierra-antes-agua.jpg' },
+        { label: 'Antes · sin agua', src: 'img/sierra-antes-seca.jpg' },
+        { label: 'Después · vista general', src: 'img/sierra-despues.jpg' },
+        { label: 'Después · escalera', src: 'img/sierra-despues-escalera.jpg' }
+      ],
+      p4: [
+        { label: 'Antes · frente', src: 'img/porton-antes-frente.jpg' },
+        { label: 'Antes · interior', src: 'img/porton-antes-interior.jpg' },
+        { label: 'Antes · puerta, con el frente protegido', src: 'img/porton-antes-puerta.jpg' },
+        { label: 'Después · frente', src: 'img/porton-despues-frente.jpg' },
+        { label: 'Después · interior', src: 'img/porton-despues-interior.jpg' },
+        { label: 'Después · lateral', src: 'img/porton-despues-lateral.jpg' }
+      ],
+      p5: [
+        { label: 'Antes · con grafiti', src: 'img/cortina-antes-grafiti.jpg' },
+        { label: 'Antes · frente protegido', src: 'img/cortina-antes-frente.jpg' },
+        { label: 'Después · frente', src: 'img/cortina-despues-frente.jpg' },
+        { label: 'Después · detalle de la terminación', src: 'img/cortina-despues-detalle.jpg' }
+      ],
+      p6: [
+        { label: 'Antes · membrana gastada', src: 'img/losa-antes.jpg' },
+        { label: 'Antes · membrana vieja despegada en la carga', src: 'img/losa-proceso-retiro.jpg' },
+        { label: 'Después · cargas terminadas', src: 'img/losa-despues-esquina.jpg' },
+        { label: 'Después · misma carga del antes', src: 'img/losa-despues-carga.jpg' },
+        { label: 'Video · recorrida del trabajo terminado', src: 'img/losa-video.mp4', video: true, poster: 'img/losa-video-poster.jpg' }
+      ],
+      p7: [
+        { label: 'Antes · juego completo', src: 'img/mob-antes-juego.jpg' },
+        { label: 'Antes · sillón', src: 'img/mob-antes-sillon.jpg' },
+        { label: 'Después · juego completo', src: 'img/mob-despues-juego.jpg' },
+        { label: 'Después · en el jardín', src: 'img/mob-despues-jardin.jpg' }
+      ],
+      p8: [
+        { label: 'Antes · mesa lijada', src: 'img/madera-antes-mesa.jpg' },
+        { label: 'Antes · bancos', src: 'img/madera-antes-bancos.jpg' },
+        { label: 'Después · mesa', src: 'img/madera-despues-mesa.jpg' },
+        { label: 'Después · bancos', src: 'img/madera-despues-bancos.jpg' }
+      ],
+      p9: [
+        { label: 'Antes · pared con humedad y pintura saltada', src: 'img/int-antes-pared.jpg' },
+        { label: 'Antes · pared del ventanal', src: 'img/int-antes-ventanal.jpg' },
+        { label: 'Antes · muebles y aberturas protegidos con nylon', src: 'img/int-antes-proteccion.jpg' },
+        { label: 'Después · pared principal', src: 'img/int-despues-pared.jpg' },
+        { label: 'Después · ambiente terminado', src: 'img/int-despues-ventanal.jpg' }
+      ]
+    };
+
+    const info = {
+      p1: {
+        resumen: 'De agua verde a lista para la temporada.',
+        descripcion: 'La piscina llevaba tiempo sin mantenimiento: agua verde, revestimiento manchado y gastado. Se vació, se limpió a fondo y se renovó la pintura completa, escalones incluidos.',
+        tareas: ['Vaciado y limpieza a fondo', 'Preparación de superficies', 'Pintura completa con pintura para piscinas', 'Llenado y puesta a punto'],
+        material: 'Mampostería (piscina de material)',
+        zona: 'La Plata, Provincia de Buenos Aires', duracion: '4 días'
+      },
+      p2: {
+        resumen: 'Terminación nueva y cambio de color.',
+        descripcion: 'Piscina de fibra de vidrio con agua verde, manchas y la superficie opaca. Se vació, se limpió y se renovó la terminación, pasando del celeste original a un color crema.',
+        tareas: ['Vaciado y limpieza', 'Lijado y preparación de la fibra', 'Nueva terminación color crema', 'Escalera y bordes incluidos'],
+        material: 'Fibra de vidrio',
+        zona: 'Los Molles, San Luis', duracion: '5 días'
+      },
+      p3: {
+        resumen: 'Del abandono a un celeste nuevo.',
+        descripcion: 'Piscina de material que llevaba tiempo sin uso: agua estancada, algas, manchas y la pintura vieja descascarada. Se vació, se limpió a fondo y se pintó completa en celeste, escalones incluidos.',
+        tareas: ['Vaciado y limpieza a fondo', 'Eliminación de algas y manchas', 'Preparación de superficies', 'Pintura completa en celeste, escalones incluidos'],
+        material: 'Mampostería (piscina de material)',
+        zona: 'Los Molles, San Luis', duracion: '3 días'
+      },
+      p4: {
+        resumen: 'De gastado y manchado a negro brillante.',
+        descripcion: 'Portón de chapa y puerta peatonal con la pintura gastada y llena de manchas. Se lijó y limpió todo, se protegieron los muros y el frente, y se pintó en negro brillante, marcos incluidos.',
+        tareas: ['Lijado y limpieza de la chapa', 'Protección de muros y frente', 'Pintura negra brillante', 'Portón, puerta peatonal y marcos'],
+        material: 'Chapa de hierro',
+        zona: 'Villa Castells, Provincia de Buenos Aires', duracion: '3 días'
+      },
+      p5: {
+        resumen: 'Chau grafiti: cortina como nueva.',
+        descripcion: 'Cortina de enrollar de un local comercial con grafiti y la pintura vieja gastada. Se limpió, se protegió todo el frente y se pintó a soplete, rejilla de ventilación incluida.',
+        tareas: ['Limpieza y eliminación del grafiti', 'Protección del frente', 'Pintura a soplete', 'Cortina, rejilla y puerta'],
+        material: 'Chapa metálica (cortina de enrollar)',
+        zona: 'José Hernández, Provincia de Buenos Aires', duracion: '3 días'
+      },
+      p6: {
+        resumen: 'Membrana nueva y techo blanco, listo para las lluvias.',
+        descripcion: 'Losa con la membrana vieja gastada, despegada en las cargas y con manchas de humedad. Se levantó la membrana dañada, se colocó membrana nueva con soplete y se terminó con pintura impermeabilizante blanca en la losa y las cargas.',
+        tareas: ['Retiro de la membrana dañada', 'Colocación de membrana nueva con soplete', 'Sellado de uniones y cargas', 'Pintura impermeabilizante blanca'],
+        material: 'Losa de hormigón con membrana asfáltica',
+        zona: 'La Plata, Provincia de Buenos Aires', duracion: '3 días'
+      },
+      p7: {
+        resumen: 'De gris gastado a azul petróleo.',
+        descripcion: 'Juego de jardín de plástico símil ratán, con el color gris gastado y opaco por el sol. Se limpió, se protegió el entorno y se pintó completo en azul, sillones, reposeras y mesa incluidos.',
+        tareas: ['Limpieza y desengrase', 'Protección del piso y el entorno', 'Pintura para plástico en azul', 'Sillones, sillón doble, mesa y reposeras'],
+        material: 'Plástico símil ratán',
+        zona: 'La Plata, Provincia de Buenos Aires', duracion: '2 días'
+      },
+      p8: {
+        resumen: 'Madera recuperada, terminación oscura y brillante.',
+        descripcion: 'Mesa y bancos de exterior con la terminación vieja gastada y la madera opaca por la intemperie. Se lijó todo hasta la madera y se le dio una terminación nueva en tono oscuro, pensada para estar al aire libre.',
+        tareas: ['Lijado completo hasta la madera', 'Limpieza y preparación', 'Teñido en tono oscuro', 'Terminación protectora para exterior'],
+        material: 'Madera',
+        zona: 'La Plata, Provincia de Buenos Aires', duracion: '5 días'
+      },
+      p9: {
+        resumen: 'Paredes sanas y parejas, sin rastros de humedad.',
+        descripcion: 'Ambiente interior con paredes manchadas por humedad, pintura descascarada y revoque saltado. Se rasquetearon y repararon las zonas dañadas, se emparejó con enduido y se pintó en gris, con pisos y aberturas protegidos.',
+        tareas: ['Rasqueteado de la pintura floja', 'Reparación de revoque y enduido', 'Protección de pisos, aberturas y muebles', 'Pintura látex en gris'],
+        material: 'Pared de mampostería revocada',
+        zona: 'Villa Castells, Provincia de Buenos Aires', duracion: '3 días'
+      }
+    };
+
+    const heroList = [
+      { id: 'p1', src: 'img/pileta-despues-agua.jpg' },
+      { id: 'p4', src: 'img/porton-despues-frente.jpg' },
+      { id: 'p9', src: 'img/int-despues-ventanal.jpg' },
+      { id: 'p3', src: 'img/sierra-despues.jpg' },
+      { id: 'p8', src: 'img/madera-despues-mesa.jpg' },
+      { id: 'p5', src: 'img/cortina-despues-frente.jpg' },
+      { id: 'p2', src: 'img/fibra-despues-frente.jpg' },
+      { id: 'p7', src: 'img/mob-despues-juego.jpg' },
+      { id: 'p6', src: 'img/losa-despues-carga.jpg' }
+    ];
+
+    const servicios = [
+        { num: '01', titulo: 'Piscinas', ej: 'De material · Fibra de vidrio' },
+        { num: '02', titulo: 'Losas y Terrazas', ej: 'Losas · Terrazas' },
+        { num: '03', titulo: 'Pintura', ej: 'Exterior · Interior' },
+        { num: '04', titulo: 'Aberturas', ej: 'Hierro · Madera' },
+        { num: '05', titulo: 'Mobiliario', ej: 'Muebles de exterior · Pintura' }
+      ];
+const WA = 'https://wa.me/5492215550664';
+const cats = ['Todos', 'Piscinas', 'Losas y Terrazas', 'Pintura', 'Aberturas', 'Mobiliario'];
+const byId = {}; todos.forEach(t => byId[t.id] = Object.assign(t, info[t.id] || {}));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+
+/* Hero */
+let hi = 0;
+const slides = $('slides'), puntos = $('puntos');
+heroList.forEach((h, j) => {
+  const im = document.createElement('img'); im.src = h.src; im.alt = (byId[h.id] || {}).titulo + ', trabajo terminado';
+  if (j > 0) im.loading = 'lazy';
+  slides.insertBefore(im, puntos);
+  puntos.appendChild(document.createElement('span'));
+});
+function heroPintar(){
+  slides.querySelectorAll('img').forEach((im, j) => im.classList.toggle('on', j === hi));
+  puntos.querySelectorAll('span').forEach((p, j) => p.classList.toggle('on', j === hi));
+  $('heroPos').textContent = String(hi + 1).padStart(2, '0') + ' / ' + String(heroList.length).padStart(2, '0');
+  $('heroTitulo').textContent = byId[heroList[hi].id].titulo;
+}
+heroPintar();
+setInterval(() => { hi = (hi + 1) % heroList.length; heroPintar(); }, 5000);
+$('heroVer').onclick = () => abrir(heroList[hi].id, 0);
+
+/* Servicios */
+$('servicios-lista').innerHTML = servicios.map(s =>
+  '<article><span class="eyebrow" style="color:#5A5F54">' + s.num + '</span><h3 class="serif" style="margin:0;font-size:38px;line-height:1">' + esc(s.titulo) + '</h3>' +
+  '<span style="font-size:12px;letter-spacing:1px;text-transform:uppercase;border-top:1px solid #C9C5B8;padding-top:10px">' + esc(s.ej) + '</span>' +
+  '<button type="button" class="link-btn" data-cat="' + esc(s.titulo) + '">Ver trabajos →</button></article>').join('');
+$('servicios-lista').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; setFiltro(b.dataset.cat); $('trabajos').scrollIntoView({ behavior: 'smooth' }); });
+
+/* Trabajos */
+let filtro = 'Todos'; const vista = {};
+function setFiltro(c){ filtro = c; pintarChips(); pintarTrack(); $('track').scrollTo({ left: 0 }); }
+function pintarChips(){
+  $('chips').innerHTML = cats.map(c => '<button type="button" class="chip' + (c === filtro ? ' on' : '') + '" aria-pressed="' + (c === filtro) + '" data-c="' + esc(c) + '">' + esc(c) + '</button>').join('');
+}
+$('chips').addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b) setFiltro(b.dataset.c); });
+function card(t){
+  const i = Math.min(vista[t.id] || 0, t.vistas.length - 1), v = t.vistas[i];
+  return '<figure class="card" data-id="' + t.id + '">' +
+    '<div class="par"><button type="button" data-abrir="' + esc(v.fotos[0]) + '" aria-label="Ampliar foto de antes"><img src="' + esc(v.fotos[0]) + '" alt="' + esc(t.titulo + ', antes, ' + v.alt) + '" loading="lazy"><span class="tag a">Antes</span></button>' +
+    '<button type="button" data-abrir="' + esc(v.fotos[1]) + '" aria-label="Ampliar foto de después"><img src="' + esc(v.fotos[1]) + '" alt="' + esc(t.titulo + ', después, ' + v.alt) + '" loading="lazy"><span class="tag d">Después</span></button></div>' +
+    '<div class="vistas" role="group" aria-label="Cambiar vista del trabajo">' + t.vistas.map((x, j) => '<button type="button" class="' + (j === i ? 'on' : '') + '" aria-pressed="' + (j === i) + '" data-v="' + j + '">' + esc(x.label) + '</button>').join('') + '</div>' +
+    '<button type="button" class="link-btn" data-todas="1">Ver trabajo completo →</button>' +
+    '<figcaption><span class="rubro">' + esc(t.rubro) + '</span><span class="serif" style="font-size:26px;line-height:1.1">' + esc(t.titulo) + '</span><span style="font-size:14px;color:var(--suave)">' + esc(t.resumen || '') + '</span></figcaption></figure>';
+}
+function pintarTrack(){
+  const lista = todos.filter(t => t.vistas && (filtro === 'Todos' || t.rubro === filtro));
+  $('track').innerHTML = lista.map(card).join('');
+}
+$('track').addEventListener('click', e => {
+  const fig = e.target.closest('figure'); if (!fig) return; const t = byId[fig.dataset.id];
+  const v = e.target.closest('[data-v]');
+  if (v) { vista[t.id] = +v.dataset.v; fig.outerHTML = card(t); return; }
+  const a = e.target.closest('[data-abrir]');
+  if (a) { abrir(t.id, Math.max(0, (fotosDe[t.id] || []).findIndex(x => x.src === a.dataset.abrir))); return; }
+  if (e.target.closest('[data-todas]')) abrir(t.id, 0);
+});
+pintarChips(); pintarTrack();
+
+/* Carrusel automático */
+const track = $('track'); let pausa = false, reT;
+function mover(dir){
+  const fig = track.querySelector('figure'); const step = fig ? fig.offsetWidth + 32 : track.clientWidth;
+  const max = track.scrollWidth - track.clientWidth;
+  if (dir > 0 && track.scrollLeft >= max - 8) track.scrollTo({ left: 0, behavior: 'smooth' });
+  else if (dir < 0 && track.scrollLeft <= 8) track.scrollTo({ left: max, behavior: 'smooth' });
+  else track.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+function pausar(){ pausa = true; clearTimeout(reT); }
+function reanudar(ms){ clearTimeout(reT); reT = setTimeout(() => { pausa = false; }, ms || 0); }
+setInterval(() => { if (!pausa && !$('modal').classList.contains('on')) mover(1); }, 3500);
+track.addEventListener('mouseenter', pausar); track.addEventListener('mouseleave', () => reanudar(0));
+track.addEventListener('touchstart', pausar, { passive: true }); track.addEventListener('touchend', () => reanudar(5000));
+$('prev').onclick = () => { pausar(); mover(-1); reanudar(6000); };
+$('next').onclick = () => { pausar(); mover(1); reanudar(6000); };
+
+/* Posteo */
+let mId = null, mI = 0;
+function abrir(id, i){ mId = id; mI = i; pintarModal(); $('modal').classList.add('on'); document.body.style.overflow = 'hidden'; $('mCerrar').focus(); }
+function cerrar(){ $('modal').classList.remove('on'); document.body.style.overflow = ''; const v = $('mMedia').querySelector('video'); if (v) v.pause(); }
+function pintarModal(){
+  const t = byId[mId], g = fotosDe[mId] || []; const n = g.length; mI = ((mI % n) + n) % n; const f = g[mI];
+  $('mMedia').innerHTML = f.video ? '<video src="' + esc(f.src) + '" poster="' + esc(f.poster || '') + '" controls playsinline aria-label="' + esc(t.titulo) + '"></video>' : '<img src="' + esc(f.src) + '" alt="' + esc(t.titulo + ', ' + f.label) + '">';
+  $('mEtiqueta').textContent = f.label; $('mPos').textContent = (mI + 1) + ' / ' + n;
+  $('mThumbs').innerHTML = g.map((x, j) => '<button type="button" class="' + (j === mI ? 'on' : '') + '" data-j="' + j + '" aria-label="Ver foto: ' + esc(x.label) + '"><img src="' + esc(x.poster || x.src) + '" alt="" loading="lazy">' + (x.video ? '<span aria-hidden="true" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>' : '') + '</button>').join('');
+  $('mRubro').textContent = t.rubro; $('mTitulo').textContent = t.titulo; $('mResumen').textContent = t.resumen || '';
+  $('mDesc').textContent = t.descripcion || '';
+  $('mTareas').innerHTML = (t.tareas || []).map((x, j) => '<li style="border-top:1px solid var(--tinta);padding:11px 0;display:flex;gap:12px"><span style="font-size:12px;color:#5A5F54;width:22px">' + String(j + 1).padStart(2, '0') + '</span><span>' + esc(x) + '</span></li>').join('');
+  $('mMaterial').textContent = t.material || ''; $('mZona').textContent = t.zona || ''; $('mDuracion').textContent = t.duracion || '';
+}
+$('mThumbs').addEventListener('click', e => { const b = e.target.closest('[data-j]'); if (b) { mI = +b.dataset.j; pintarModal(); } });
+$('mPrev').onclick = () => { mI--; pintarModal(); }; $('mNext').onclick = () => { mI++; pintarModal(); };
+$('mCerrar').onclick = cerrar;
+$('modal').addEventListener('click', e => { if (e.target === $('modal')) cerrar(); });
+document.addEventListener('keydown', e => { if (!$('modal').classList.contains('on')) return; if (e.key === 'Escape') cerrar(); if (e.key === 'ArrowLeft') $('mPrev').click(); if (e.key === 'ArrowRight') $('mNext').click(); });
+
+/* Formulario */
+$('form').addEventListener('submit', e => {
+  e.preventDefault(); const d = new FormData(e.target);
+  const txt = 'Hola! Quiero pedir un presupuesto.' + (d.get('nombre') ? '\nNombre: ' + d.get('nombre') : '') + (d.get('telefono') ? '\nTeléfono: ' + d.get('telefono') : '') + (d.get('mensaje') ? '\nTrabajo: ' + d.get('mensaje') : '');
+  window.open(WA + '?text=' + encodeURIComponent(txt), '_blank', 'noopener'); $('ok').style.display = 'block';
+});
+})();
+</script>
+</body>
+</html>
